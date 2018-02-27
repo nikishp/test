@@ -92,12 +92,13 @@ $(function () {
 
 
   //menu on click
+  // var startWidth = 1100;
   // var menu = $('.header__list');
-  // var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  // var windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   // $(window).resize(function(){
-  // w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  //   if(w > 900 && menu.is(':hidden')) {
+  // windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  //   if(windowWidht > startWidth && menu.is(':hidden')) {
   //     menu.attr("style", "");
   //   };
   // });
@@ -119,7 +120,7 @@ $(function () {
 
   //   }else{
   //     $('.header__list-sublist-wrap').css('display', 'none');
-  //     if(w < 900){
+  //     if(windowWidht < startWidth){
   //       menu.stop(true,true).slideToggle();
   //       $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
   //     };
@@ -128,14 +129,14 @@ $(function () {
 
   // $('.header-sublist__link').on('click',  function(event) {
   //   $('.header__list-sublist-wrap').css('display', 'none');
-  //   if(w < 900){
+  //   if(windowWidht < startWidth){
   //     menu.stop(true,true).slideToggle();
   //     $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
   //   };
   // });
   // // close menu if click on "body"
   // $(document).mouseup(function (e) {
-  //   if(menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0 && w < 900){
+  //   if(menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0 && windowWidht < startWidth){
   //     $('.header__list-sublist-wrap').css('display', 'none');
   //     menu.stop(true,true).slideToggle();
   //     $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
@@ -143,8 +144,10 @@ $(function () {
   //   }
   // });
 
+    // menu on click end
 
-  // menu on click end
+
+
 
   //menu on hover
   var startWidth = 1100;
@@ -159,7 +162,6 @@ $(function () {
       $('.hamburger--collapse').removeClass('is-active');
     };
   };
-
   // removeInline();
 
   function menuOn() {
@@ -284,10 +286,10 @@ $(function () {
   };
 
   //вызывать по клику  showSection($(this).attr('href'), true);
-  $('.header__list-link').on('click', function (event) {
-    event.preventDefault();
-    showSection($(this).attr('href'), true);
-  });
+  // $('.header__list-link').on('click', function (event) {
+  //   event.preventDefault();
+  //   showSection($(this).attr('href'), true);
+  // });
   //scroll end
 
   //add class

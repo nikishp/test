@@ -10,15 +10,28 @@ body
 *::-webkit-input-placeholder
   color: inherit
   opacity: 1
+  transition: $tr
 *:-moz-placeholder
   color: inherit
   opacity: 1
+  transition: $tr
 *::-moz-placeholder
   color: inherit
   opacity: 1
+  transition: $tr
 *:-ms-input-placeholder
   color: inherit
   opacity: 1
+  transition: $tr
+
+*:focus::-webkit-input-placeholder
+  opacity: 0
+*:focus:-moz-placeholder
+  opacity: 0
+*:focus::-moz-placeholder
+  opacity: 0
+*:focus:-ms-input-placeholder
+  opacity: 0
 
 // body input:focus:required:invalid,
 // body textarea:focus:required:invalid
