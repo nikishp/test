@@ -10,9 +10,9 @@ module.exports = function () {
         message: error.message 
       };
     }))
-    //.pipe($.gp.autoprefixer({
-    //browsers: ['last 3 version']
-    //}))
+//    .pipe($.gp.autoprefixer({
+//    browsers: ['last 6 version']
+//    }))
     .pipe($.gcmq())
     //.pipe($.gp.cssnano()) 
     //.pipe($.gp.cleanCss())
