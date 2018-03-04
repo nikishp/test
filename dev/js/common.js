@@ -1,14 +1,15 @@
 //$(document).ready(function() {
-$(function () {
 
-  svg4everybody();
-  objectFitImages();
+$(function () {     
+ 
+  svg4everybody(); 
+  objectFitImages();  
 
   var $form = $('.form');
 
   $form.on('click', function (event) {
     var formId = $(this).attr("id");
-    // console.log('formId ' + formId);
+    // console.log('formId ' + formId); 
     localStorage.setItem('form', formId);
     var pageName = window.location.pathname;
     // console.log('pageName ' + pageName);
@@ -147,8 +148,6 @@ $(function () {
     // menu on click end
 
 
-
-
   //menu on hover
   var startWidth = 1100;
   var menu = $('.header__list');
@@ -264,7 +263,7 @@ $(function () {
   //menu fixed on scroll end
 
   //menu scroll and add class on scroll
-
+     
   //scroll
   var navHeight = $(".header__top-line").outerHeight(true);
 

@@ -4,6 +4,8 @@ module.exports = function() {
     //'node_modules/jquery/dist/jquery.js', 
     //jquery 2.2.4
     'dev/libs/jquery/jquery-2.2.4.min.js',
+
+    // svg4everybody
     'node_modules/svg4everybody/dist/svg4everybody.min.js',
 
     //magnific-popup
@@ -59,7 +61,6 @@ module.exports = function() {
 
     //jquery-cookie
     //'dev/libs/jquery-cookie-master/src/jquery.cookie.js',
-
 
     //jquery.steps
     //'dev/libs/jquery.steps/build/jquery.steps.js',
