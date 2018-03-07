@@ -8,7 +8,7 @@ var settings = {
   offset: "30px", // отступ межу столбцами
   mobileFirst: false,
   container: {
-    maxWidth: "1200px", 
+    maxWidth: "1200px",
     fields: "30px"
   },
   breakPoints: {
@@ -20,8 +20,7 @@ var settings = {
       fields: "15px"
     },
     sm: {
-      width: "768px",
-      fields: "10px"
+      width: "768px"
     },
     smx: {
       width: "640px"
