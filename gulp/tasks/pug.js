@@ -28,7 +28,7 @@ module.exports = function() {
         nav: JSON.parse($.fs.readFileSync('data/navigation.json', 'utf8')),
         content: JSON.parse($.fs.readFileSync('data/content.json', 'utf8')),
       },
-      pretty: false
+      pretty: true
     }))
       .on('error', $.gp.notify.onError(function(error) {
       return {
