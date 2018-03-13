@@ -110,12 +110,20 @@ module.exports = function() {
 
   ];
 
-
+//https://davidwalsh.name/compress-uglify
   $.gulp.task('js:dev', () => {
     return $.gulp.src('dev/js/*.js')
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.uglify({
       mangle: false,
+      compress: {
+        sequences: false, //join consecutive simple statements using the comma operator
+        dead_code: true,
+        conditionals: true,// optimize if else
+        booleans: true,
+        join_vars: true,//join consecutive var statements
+        drop_console: true
+      },
       output: {
         beautify: true
       }
@@ -136,6 +144,14 @@ module.exports = function() {
       .pipe($.gp.removeCode({ production: true }))
       .pipe($.gp.uglify({
       mangle: false,
+      compress: {
+        sequences: false, //join consecutive simple statements using the comma operator
+        dead_code: true,
+        conditionals: true,// optimize if else
+        booleans: true,
+        join_vars: true,//join consecutive var statements
+        drop_console: true
+      },
       output: {
         beautify: true
       }
