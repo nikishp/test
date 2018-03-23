@@ -110,7 +110,7 @@ module.exports = function() {
 
   ];
 
-//https://davidwalsh.name/compress-uglify
+  //https://davidwalsh.name/compress-uglify
   $.gulp.task('js:dev', () => {
     return $.gulp.src('dev/js/*.js')
       .pipe($.gp.sourcemaps.init())
@@ -122,7 +122,7 @@ module.exports = function() {
         conditionals: true,// optimize if else
         booleans: true,
         join_vars: true,//join consecutive var statements
-        drop_console: true
+        drop_console: false
       },
       output: {
         beautify: true
