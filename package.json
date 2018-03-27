@@ -39,6 +39,7 @@
     "smart-grid": "^2.0.1"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-image": "^4.3.0",
     "gulp.spritesmith": "^6.9.0",
