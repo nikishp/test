@@ -13,6 +13,10 @@ module.exports = function() {
     'dev/libs/magnific-popup/dist/jquery.magnific-popup.js',
     //'node_modules/magnific-popup/dist/jquery.magnific-popup.js', 
 
+    //fancybox 3
+    // https://fancyapps.com/fancybox/3/
+    // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+
     //zoom
     //'dev/libs/zoom-master/jquery.zoom.js',
 
@@ -102,19 +106,19 @@ module.exports = function() {
       +object-fit(cover, top)
       */
 
-    'node_modules/object-fit-images/dist/ofi.js',
+      'node_modules/object-fit-images/dist/ofi.js',
 
     //moment
     //'dev/libs/moment/moment.js',
     //'dev/libs/moment/moment-timezone-with-data.js',
 
-  ];
+    ];
 
   //https://davidwalsh.name/compress-uglify
   $.gulp.task('js:dev', () => {
     return $.gulp.src('dev/js/*.js')
-      .pipe($.gp.sourcemaps.init())
-      .pipe($.gp.uglify({
+    .pipe($.gp.sourcemaps.init())
+    .pipe($.gp.uglify({
       mangle: false,
       compress: {
         sequences: false, //join consecutive simple statements using the comma operator
@@ -128,21 +132,21 @@ module.exports = function() {
         beautify: true
       }
     }))
-      .on("error", $.gp.notify.onError({
+    .on("error", $.gp.notify.onError({
       title: "Error in JS:",
       message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
     }))
-      .pipe($.gp.sourcemaps.write())
-      .pipe($.gulp.dest('build/js/'))
-      .pipe($.browserSync.reload({
+    .pipe($.gp.sourcemaps.write())
+    .pipe($.gulp.dest('build/js/'))
+    .pipe($.browserSync.reload({
       stream: true
     }))
   });
 
   $.gulp.task('js:build', () => {
     return $.gulp.src('dev/js/*.js')
-      .pipe($.gp.removeCode({ production: true }))
-      .pipe($.gp.uglify({
+    .pipe($.gp.removeCode({ production: true }))
+    .pipe($.gp.uglify({
       mangle: false,
       compress: {
         sequences: false, //join consecutive simple statements using the comma operator
@@ -156,43 +160,43 @@ module.exports = function() {
         beautify: true
       }
     }))
-      .on("error", $.gp.notify.onError({
+    .on("error", $.gp.notify.onError({
       title: "Error in JS:",
       message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
     }))
-      .pipe($.gulp.dest('build/js/'))
+    .pipe($.gulp.dest('build/js/'))
   });
 
   $.gulp.task('libsJS:dev', () => {
     return $.gulp.src(jsLibsPath)
-      .pipe($.gp.concat('libs.min.js'))
-      .pipe($.gp.uglify({
+    .pipe($.gp.concat('libs.min.js'))
+    .pipe($.gp.uglify({
       mangle: false,
       // output: {
       //  beautify: true
       // }
     }))
-      .on("error", $.gp.notify.onError({
+    .on("error", $.gp.notify.onError({
       title: "Error in JS:",
       message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
     }))
-      .pipe($.gulp.dest('build/js/'))
+    .pipe($.gulp.dest('build/js/'))
   });
 
   $.gulp.task('libsJS:build', () => {
     return $.gulp.src(jsLibsPath)
-      .pipe($.gp.concat('libs.min.js'))
-      .pipe($.gp.uglify({
+    .pipe($.gp.concat('libs.min.js'))
+    .pipe($.gp.uglify({
       mangle: false,
       // output: {
       //   beautify: true
       // }
     }))
-      .on("error", $.gp.notify.onError({
+    .on("error", $.gp.notify.onError({
       title: "Error in JS:",
       message: "\n Error in: <%= error.cause.filename %>\n Error text: <%= error.cause.message %> \n Error in line: <%= error.cause.line %>",
     }))
-      .pipe($.gulp.dest('build/js/'))
+    .pipe($.gulp.dest('build/js/'))
   });
 
 };
