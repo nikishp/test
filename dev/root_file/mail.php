@@ -45,13 +45,15 @@ $mail->addAddress('admin_mail@gmail.com');
 //}
 
 //default(from of. site) multi file upload. Important, input type="file" name must have [] in name last, like: "userfile[]"
-for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
-  $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'][$ct]));
-  $filename = $_FILES['userfile']['name'][$ct];
-  if (move_uploaded_file($_FILES['userfile']['tmp_name'][$ct], $uploadfile)) {
-    $mail->addAttachment($uploadfile, $filename);
-  } else {
-    $msg .= 'Failed to move file to ' . $uploadfile;
+if (!empty($_FILES) && $_FILES['file']['error'] == 0) {
+  for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
+    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'][$ct]));
+    $filename = $_FILES['userfile']['name'][$ct];
+    if (move_uploaded_file($_FILES['userfile']['tmp_name'][$ct], $uploadfile)) {
+      $mail->addAttachment($uploadfile, $filename);
+    } else {
+      $msg .= 'Failed to move file to ' . $uploadfile;
+    }
   }
 }
 
