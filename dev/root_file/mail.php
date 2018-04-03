@@ -55,9 +55,8 @@ for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
   }
 }
 
-
-
 //Build mail body content
+$message = "";
 $c = true;
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "form_subject" ) {
@@ -86,7 +85,8 @@ if( $mail->send() ){
   echo 'Письмо не может быть отправлено. ';
   echo 'Ошибка: ' . $mail->ErrorInfo;
 }
-die( $answer );
+die( 'Answer after submit: ' . $answer );
 
 
 ?>
+
