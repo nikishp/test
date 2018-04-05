@@ -1,7 +1,7 @@
 //$(document).ready(function() {
 
 $(function () {     
- 
+
   svg4everybody(); 
   objectFitImages();  
 
@@ -18,8 +18,8 @@ $(function () {
 
   //	E-mail Ajax Send
   $form.each(function () {
-    var $this = $(this);
-    $this.validate({
+//    var $this = $(this);
+   $(this).validate({
 
       // rules: {
       // 	phone: {
@@ -27,37 +27,38 @@ $(function () {
       // 		minlength: 6,
       // 		number: true
       // 	}
-      // },
+      // }, 
 
       submitHandler: function (form) {
         var formData = new FormData(form);
         $.ajax({
-          type: 'POST',
-          url: 'mail.php',
+          type: "POST",
+          url: "mail.php",
           data: formData,
           contentType: false,
-          dataType: 'json',
+          dataType: "json",
           processData: false,
           beforeSend: function () {
-            $this.find('.btn').attr("disabled", true);
-            $this.find('.form-load').css({
+            $(form).find('.btn').attr("disabled", true);
+            $(form).find('.form-load').css({
               'width': '20px',
               'margin-left': '10px'
             });
             console.log('before send')
           }
         }).done(function () {
-          $this.find('.btn').attr("disabled", false);
-          $this.find('.form-load').css({
+          $(form).find('.btn').attr("disabled", false);
+          $(form).find('.form-load').css({
             'width': '0',
             'margin-left': '0'
           });
-          $this.trigger("reset");
+          $(form).trigger("reset");
           $.magnificPopup.close();
-          //          window.location.href = "thanks.html";
+          //window.location.href = "thanks.html";
           console.log('done')
         }).fail(function () {
           alert("Error, email not sent !");
+          console.log('error')
         });
       }
     });
@@ -145,7 +146,7 @@ $(function () {
   //   }
   // });
 
-    // menu on click end
+  // menu on click end
 
 
   //menu on hover
@@ -263,7 +264,7 @@ $(function () {
   //menu fixed on scroll end
 
   //menu scroll and add class on scroll
-     
+
   //scroll
   var navHeight = $(".header__top-line").outerHeight(true);
 
