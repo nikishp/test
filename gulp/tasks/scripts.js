@@ -85,8 +85,8 @@ module.exports = function() {
 
     /* how to use
     $(".inst_block").instagramGet({
-      "user_id": "1318009955",
-      "access_token": "1318009955.1677ed0.464f56fb2cd543e0b698f2603d05363d",
+      "user_id": "user_id",
+      "access_token": "access_token",
       "count": 9,
     });
     */
