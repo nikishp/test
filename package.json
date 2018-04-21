@@ -13,7 +13,7 @@
     "url": "https://github.com/nikishp/Gulp-def.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.23.7",
     "colors": "^1.2.1",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -25,10 +25,10 @@
     "gulp-csso": "^3.0.1",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-remove-code": "^1.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-remove-code": "^2.0.1",
     "gulp-replace": "^0.6.1",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-svgmin": "^1.2.4",
@@ -39,8 +39,8 @@
     "smart-grid": "^2.0.1"
   },
   "dependencies": {
-    "@fancyapps/fancybox": "^3.3.0",
-    "bootstrap": "^4.0.0",
+    "@fancyapps/fancybox": "^3.3.5",
+    "bootstrap": "^4.1.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-image": "^4.3.0",
     "gulp.spritesmith": "^6.9.0",
