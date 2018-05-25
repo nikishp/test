@@ -2,7 +2,7 @@ module.exports = function() {
 	$.gulp.task('serve', function() {
 		$.browserSync.init({
 			//server: 'build',
-			proxy: "http://gulp-pug-2-0/build/",
+			proxy: "http://project_folder/build/",
 			// reloadDelay: 2000,
 			notify: false,
 			//tunnel: true,
