@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikishp/Gulp-def.git"
+    "url": "https://github.com/nikishp/Gulp"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
