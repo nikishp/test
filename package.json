@@ -41,6 +41,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.3.5",
     "bootstrap": "^4.1.1",
+    "flatpickr": "^4.5.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-image": "^4.3.0",
     "gulp.spritesmith": "^6.9.0",
