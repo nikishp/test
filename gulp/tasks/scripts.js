@@ -17,6 +17,13 @@ module.exports = function() {
         // https://fancyapps.com/fancybox/3/
         // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 
+        /*flatpickr */
+        //https://flatpickr.js.org/
+        //'node_modules/flatpickr/dist/flatpickr.min.js',
+        //'node_modules/flatpickr/dist/l10n/ru.js',
+        /*flatpickr end*/
+        
+        
         //zoom
         //'dev/libs/zoom-master/jquery.zoom.js',
 
