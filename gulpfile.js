@@ -34,11 +34,11 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('dev', $.gulp.series(
   'clean', 'sprite:dev',
-  $.gulp.parallel('sassLibs:dev','sass:dev', 'pug:dev', 'libsJS:dev', 'js:dev', 'svg', 'sprite:dev', 'img:dev', 'fonts', 'copy')));
+  $.gulp.parallel('sassLibs:dev','sass:dev', 'pug:dev', 'libsJS:dev', 'js:dev', 'svg', 'svg_c', 'sprite:dev', 'img:dev', 'fonts', 'copy')));
 
 $.gulp.task('build', $.gulp.series(
   'clean',
-  $.gulp.parallel('sassLibs:build','sass:build', 'pug:build', 'libsJS:build', 'js:build', 'svg', 'sprite:dev', 'img:build', 'fonts', 'copy')));
+  $.gulp.parallel('sassLibs:build','sass:build', 'pug:build', 'libsJS:build', 'js:build', 'svg', 'svg_c', 'sprite:dev', 'img:build', 'fonts', 'copy')));
 
 
 $.gulp.task('default', $.gulp.series(
