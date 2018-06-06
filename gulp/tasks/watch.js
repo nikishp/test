@@ -9,7 +9,8 @@ module.exports = function () {
 //    $.gulp.watch(['dev/img/general/**/*', './dev/img/content/**/*'], $.gulp.series('img:dev','copyFavicon'));
     $.gulp.watch(['dev/img/general/**/*', './dev/img/content/**/*'], $.gulp.series('img:dev'));
     $.gulp.watch('dev/img/ico/**/*', $.gulp.series('sprite:dev'));
-    $.gulp.watch('dev/img/svg/*.svg', $.gulp.series('svg'));
+    $.gulp.watch('dev/img/svg/svg_grayscale/*.svg', $.gulp.series('svg'));
+    $.gulp.watch('dev/img/svg/svg_colored/*.svg', $.gulp.series('svg_c'));
     $.gulp.watch('dev/root_file/**/*', $.gulp.series('copy'));
   });
 };
