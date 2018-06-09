@@ -125,49 +125,26 @@ button[type='submit']
       fill: currentColor
 
 //.counter
-  margin-top: 20px
-  padding-bottom: 50px
-  font-size: 57px
-  font-weight: 300
-  line-height: 1
-  letter-spacing: 0.4px
-  color: #ffffff
-  span
-    position: relative
-    display: inline-block
-    &:not(:last-child)
-      margin-right: 55px
-      &::before
-        content: ':'
-        position: absolute
-        top: 0px
-        right: -41px
-        font-family: FuturaNewMedium
-        animation: blinking 1s infinite cubic-bezier(1,-1.29, 1, 1)
-    &::after
-      position: absolute
-      top: 100%
-      left: 0
-      right: 0
-      padding-top: 10px
-      color: #ffffff
-      text-align: center
-      font-size: 19px
-      letter-spacing: 0.4px
+  display: flex
+  font-size: 40px
+  font-weight: 700
+  .counter__item
+    display: flex
+    align-items: center
+  .counter__item-info
+    margin: 0 10px  
+    text-align: center
+  .counter__item-numb
 
-    &:nth-child(1)
-      &::after
-        content: 'Days'
-    &:nth-child(2)
-      &::after
-        content: 'Hours'
-    &:nth-child(3)
-      &::after
-        content: 'Minutes'
-    &:nth-child(4)
-      &::after
-        content: 'Seconds'
-
+  .counter__item-title
+    // font-size: 30px
+  .counter__item-dots
+    font-size: 0
+    animation: blinking 1s infinite cubic-bezier(1,-1.29, 1, 1)
+    svg
+      width: 20px
+      height: 60px
+      fill: currentColor
 
 //@keyframes blinking
   0%
