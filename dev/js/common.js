@@ -359,7 +359,7 @@ $(function () {
 
   // timer
   // in html: .counter#clock
-  // var finishData = moment.tz("2017-12 13:00", "Europe/Moscow"),
+  // var finishData = moment.tz("2018-09-12 13:00", "Europe/Moscow"),
   //     countTextDay = 'Day',
   //     countTextHour = 'Hour',
   //     countTextMinute = 'Minute',
