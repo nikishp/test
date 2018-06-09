@@ -357,11 +357,13 @@ $(function () {
 
   //menu scroll and add class on scroll end
 
-  // timer on site head
-  //  var finishData = moment.tz("2017-09-12 13:00", "Europe/Moscow");
-  //  $('#clock').countdown(finishData.toDate(), function(event) {
-  //    $(this).html(event.strftime('<span>%D</span>  <span>%H</span> <span>%M</span> <span> %S</span>'));
-  //  });
+  // timer
+  // in html: .counter#clock
+  // var finishData = moment.tz("2018-12 13:00", "Europe/Moscow");
+  // $('#clock').countdown(finishData.toDate(), function(event) {
+  //     // $(this).html(event.strftime('<span>%D</span>  <span>%H</span> <span>%M</span> <span> %S</span>'));
+  //     $(this).html(event.strftime('<div class="counter__item counter__item--day"><div class="counter__item-info"><div class="counter__item-numb">%D</div><div class="counter__item-title">Day</div></div><div class="counter__item-dots"><svg xmlns="http://www.w3.org/2000/svg" width="202.857" height="570" viewBox="0 0 53.673 150.813"><g transform="translate(-27.403 -29.582)"><circle cx="54.618" cy="56.04" r="26.458"/><circle cx="53.862" cy="153.936" r="26.458"/></g></svg></div></div><div class="counter__item counter__item--hour"><div class="counter__item-info"><div class="counter__item-numb">%H</div><div class="counter__item-title">Hour</div></div><div class="counter__item-dots"><svg xmlns="http://www.w3.org/2000/svg" width="202.857" height="570" viewBox="0 0 53.673 150.813"><g transform="translate(-27.403 -29.582)"><circle cx="54.618" cy="56.04" r="26.458"/><circle cx="53.862" cy="153.936" r="26.458"/></g></svg></div></div><div class="counter__item counter__item--minute"><div class="counter__item-info"><div class="counter__item-numb">%M</div><div class="counter__item-title">Minute</div></div><div class="counter__item-dots"><svg xmlns="http://www.w3.org/2000/svg" width="202.857" height="570" viewBox="0 0 53.673 150.813"><g transform="translate(-27.403 -29.582)"><circle cx="54.618" cy="56.04" r="26.458"/><circle cx="53.862" cy="153.936" r="26.458"/></g></svg></div></div><div class="counter__item counter__item--second"><div class="counter__item-info"><div class="counter__item-numb">%S</div><div class="counter__item-title">Second</div></div></div>'));
+  // });
 
 
 
