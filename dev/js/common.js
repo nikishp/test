@@ -98,11 +98,11 @@ $(function () {
   //menu on click
   // var startWidth = 1100;
   // var menu = $('.header__list');
-  // var windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  // var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   // $(window).resize(function(){
-  // windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  //   if(windowWidht > startWidth && menu.is(':hidden')) {
+  // windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  //   if(windowWidth > startWidth && menu.is(':hidden')) {
   //     menu.attr("style", "");
   //   };
   // });
@@ -124,7 +124,7 @@ $(function () {
 
   //   }else{
   //     $('.header__list-sublist-wrap').css('display', 'none');
-  //     if(windowWidht < startWidth){
+  //     if(windowWidth < startWidth){
   //       menu.stop(true,true).slideToggle();
   //       $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
   //     };
@@ -133,14 +133,14 @@ $(function () {
 
   // $('.header-sublist__link').on('click',  function(event) {
   //   $('.header__list-sublist-wrap').css('display', 'none');
-  //   if(windowWidht < startWidth){
+  //   if(windowWidth < startWidth){
   //     menu.stop(true,true).slideToggle();
   //     $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
   //   };
   // });
   // // close menu if click on "body"
   // $(document).mouseup(function (e) {
-  //   if(menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0 && windowWidht < startWidth){
+  //   if(menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0 && windowWidth < startWidth){
   //     $('.header__list-sublist-wrap').css('display', 'none');
   //     menu.stop(true,true).slideToggle();
   //     $('.hamburger--collapse').stop(true,true).toggleClass('is-active');
@@ -154,10 +154,10 @@ $(function () {
   //menu on hover
   var startWidth = 1100;
   var menu = $('.header__list');
-  var windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   function removeInline() {
-    if (windowWidht > startWidth) {
+    if (windowWidth > startWidth) {
       menu.attr("style", "");
 
       $('.header__list-sublist-wrap').attr("style", "");
@@ -168,7 +168,7 @@ $(function () {
 
   function menuOn() {
     //activate the menu only if the width of the window is less than the specified
-    if (windowWidht <= startWidth) {
+    if (windowWidth <= startWidth) {
 
       //open menu
       $('#openup').on('click', function (e) {
@@ -221,8 +221,8 @@ $(function () {
   menuOn();
 
   $(window).resize(function () {
-    windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    // console.log("windowWidht", windowWidht);
+    windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    // console.log("windowWidth", windowWidth);
     removeInline();
     refreshVar(); //part of the function of fixing the menu
   });
