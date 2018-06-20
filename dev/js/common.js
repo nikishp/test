@@ -5,7 +5,7 @@ $(function () {
   svg4everybody(); 
   objectFitImages();  
 
-  var windowWidht = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   
   var $form = $('.form');
 
