@@ -7,3 +7,34 @@ mixin svg_c(name,mod)
   - mod = mod || ''
   svg(class="svg svg--colored svg--" + name + ' ' + mod)
     use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+
+
+mixin divider()
+  section.divider
+    .container
+      .row
+        .col
+          .divider__item.divider__item--l
+        .col
+          .divider__item.divider__item--r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

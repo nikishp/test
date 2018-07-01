@@ -1,9 +1,9 @@
 module.exports = function() {
     var jsLibsPath = [
         // jqurye 3...
-        //'node_modules/jquery/dist/jquery.js', 
+        'node_modules/jquery/dist/jquery.js', 
         //jquery 2.2.4
-        'dev/libs/jquery/jquery-2.2.4.min.js',
+        // 'dev/libs/jquery/jquery-2.2.4.min.js',
 
         // svg4everybody
         'node_modules/svg4everybody/dist/svg4everybody.min.js',
@@ -11,7 +11,7 @@ module.exports = function() {
         //magnific-popup
         //http://dimsemenov.com/plugins/magnific-popup/
         // 'dev/libs/magnific-popup/dist/jquery.magnific-popup.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+        // 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
 
         //fancybox 3
         // https://fancyapps.com/fancybox/3/

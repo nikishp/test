@@ -1,6 +1,12 @@
 mixin header(name)
   - name = name || ''
   header(class="header " + name)
+    .container
+      .row.row--header
+        .col-lg-4
+          .logo: img(src="img/content/logo.png", alt="image")
+        .col-lg-8
+          +menuHover()
 
 
 
