@@ -1,23 +1,37 @@
 //$(document).ready(function() {
 
-$(function () {     
+  $(function () {     
 
-  svg4everybody(); 
-  objectFitImages();  
+    svg4everybody(); 
+    objectFitImages();  
 
-  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  
-
-  $('.slider').slick({
-    arrows: false,
-    dots: true
-  });
+    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 
-  var $form = $('.form');
+    $('.slider').slick({
+      arrows: false,
+      dots: true
+    });
 
-  $form.on('click', function (event) {
-    var formId = $(this).attr("id");
+
+    $('.slider-goods').slick({
+      // arrows: false,
+      infinite: false,
+      appendArrows: '.slider-control__btns',
+      prevArrow: '<div class="slider-control__btn slider-control__btn--prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.596 240.822"><path d="M 57.633,129.007 165.93,237.268 c 4.752,4.74 12.451,4.74 17.215,0 4.752,-4.74 4.752,-12.439 0,-17.179 L 83.438,120.418 183.133,20.747 c 4.752,-4.74 4.752,-12.439 0,-17.191 -4.752,-4.74 -12.463,-4.74 -17.215,0 L 57.621,111.816 c -4.679,4.691 -4.679,12.511 0.012,17.191 z" transform="translate(-54.113 -.001)"/></svg></div>',
+      nextArrow: '<div class="slider-control__btn slider-control__btn--next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.596 240.822"><path d="M 183.189,111.816 74.892,3.555 c -4.752,-4.74 -12.451,-4.74 -17.215,0 -4.752,4.74 -4.752,12.439 0,17.179 l 99.707,99.671 -99.695,99.671 c -4.752,4.74 -4.752,12.439 0,17.191 4.752,4.74 12.463,4.74 17.215,0 L 183.201,129.006 c 4.68,-4.691 4.68,-12.511 -0.012,-17.19 z" transform="translate(-54.113)"/></svg></div>',
+      slidesToShow: 4,
+      slidesToScroll: 4
+    });
+
+
+
+
+
+    var $form = $('.form');
+
+    $form.on('click', function (event) {
+      var formId = $(this).attr("id");
     // console.log('formId ' + formId); 
     localStorage.setItem('form', formId);
     var pageName = window.location.pathname;
@@ -28,7 +42,7 @@ $(function () {
   //	E-mail Ajax Send
   $form.each(function () {
 //    var $this = $(this);
-   $(this).validate({
+$(this).validate({
 
       // rules: {
       // 	phone: {
@@ -71,7 +85,7 @@ $(function () {
         });
       }
     });
-  });
+});
 
   //popup form
   // $('.popup-js').magnificPopup({
@@ -306,14 +320,14 @@ $(function () {
 
     $('.section').each(function () {
       var $this = $(this),
-          topEdge = $this.offset().top - $('.header__top-line').outerHeight(true),
-          bottomEdge = topEdge + $this.outerHeight(true),
-          wScroll = $(window).scrollTop();
+      topEdge = $this.offset().top - $('.header__top-line').outerHeight(true),
+      bottomEdge = topEdge + $this.outerHeight(true),
+      wScroll = $(window).scrollTop();
 
       if (topEdge < wScroll && bottomEdge > wScroll) {
 
         var currentId = $this.data('section'),
-            reqLink = $('.header__list-link').filter('[href="#' + currentId + '"]');
+        reqLink = $('.header__list-link').filter('[href="#' + currentId + '"]');
 
         reqLink.closest('.header__list-item').addClass('header__list-item--active').siblings().removeClass('header__list-item--active');
 
@@ -403,36 +417,36 @@ controlsPanel=doc.createElement('div');controlsPanel.classList.add(panelClass);t
 function initControls(){createButton(paramsStates);createButton(paramsFilters);createInputNumber(paramsOpacity);createDragButton()}
 function createButton(params){var listName=params.listName;var itemName=params.itemName;var elemTag=params.elemTag;var elemText=params.elemText;var type=params.type;var list=params.list;var action=params.action;var currentVal=currents[itemName];var attrs=params.attrs;var currentNum=list.indexOf(currentVal);var canDisableAll=params.canDisableAll;var id=itemName;var input=doc.createElement(elemTag);setClasses(input,[panelClass+'__control',panelClass+'__control--'+type]);input.setAttribute('type',type);input.setAttribute('id',id);setData(input,'state-num',currentNum);if(attrs){for(var attr in attrs){input.setAttribute(attr,attrs[attr])}}
 if(elemTag==='button'){input.innerHTML=elemText}
-if(!canDisableAll){canBeDisabled.push(input)}
-controlsPanel.appendChild(input);input.onclick=function(){if(!params.target){return}
-currentNum=+!currentNum;currentVal=list[currentNum];setData(input,'state-num',currentNum);setData(params.target.elem,itemName,currentVal);saveLocalStorage(itemName,currentVal);if(canDisableAll&&canDisableAll===!0){if(currentVal==='off'){removeCurrentStyles();disableInputs()}
-else{applyCurrentStyles();enableInputs()}}}}
-function createInputNumber(params){var itemName=params.itemName;var attrs=params.attrs;var type=params.type;var setAttr=params.setAttr;var canDisableAll=params.canDisableAll;var id=itemName;var input=doc.createElement('input');setClasses(input,[panelClass+'__control',panelClass+'__control--'+type]);input.setAttribute('type',type);input.setAttribute('id',id);for(var attr in attrs){input.setAttribute(attr,attrs[attr])}
-input.setAttribute('value',currents[itemName]);if(!canDisableAll){canBeDisabled.push(input)}
-controlsPanel.appendChild(input);input.oninput=function(){if(setAttr==='style'){params.target.elem.style[itemName]=this.value;saveLocalStorage(itemName,this.value)}}}
-function createDragButton(){var input=doc.createElement('button');setClasses(input,[panelClass+'__control',panelClass+'__control--drag-n-drop']);input.setAttribute('type','button');input.innerHTML=' ';controlsPanel.appendChild(input);input.onmousedown=function(){var offsetTop=this.offsetTop;var offsetLeft=controlsPanel.clientWidth-this.clientWidth;var styles=getComputedStyle(controlsPanel);controlsPanel.style.top=styles.top;controlsPanel.style.left=styles.left;controlsPanel.style.right='auto';controlsPanel.style.bottom='auto';doc.onmousemove=function(ev){var x=(ev.clientX-offsetLeft)+'px';var y=(ev.clientY)+'px';controlsPanel.style.left=x;controlsPanel.style.top=y}};input.onmouseup=function(){var styles=getComputedStyle(controlsPanel);var left=+styles.left.replace(/px/,'');var right=+styles.right.replace(/px/,'');var top=+styles.top.replace(/px/,'');var bottom=+styles.bottom.replace(/px/,'');if(left>right){saveLocalStorage('left','auto');saveLocalStorage('right',styles.right);controlsPanel.style.right=styles.right;controlsPanel.style.left='auto'}
-else{saveLocalStorage('left',styles.left);saveLocalStorage('right','auto')}
-if(top>bottom){saveLocalStorage('top','auto');saveLocalStorage('bottom',styles.bottom);controlsPanel.style.bottom=styles.bottom;controlsPanel.style.top='auto'}
-else{saveLocalStorage('top',styles.top);saveLocalStorage('bottom','auto')}
-doc.onmousemove=null}}
-function disableInputs(){canBeDisabled.forEach(function(item){item.setAttribute('disabled','')})}
-function enableInputs(){canBeDisabled.forEach(function(item){item.removeAttribute('disabled')})}
-function getCurrent(name,defaultValue){var itemName=[prefix,name].join('-');var localStorageVal=localStorage[itemName];return localStorageVal?localStorageVal:defaultValue}
-function saveLocalStorage(name,value){var itemName=[prefix,name].join('-');localStorage[itemName]=value}
-function getBodyOpacity(){var opacityStr=getComputedStyle(doc.body).opacity;return+opacityStr}
-function addExternalCSS(){var styleElem=doc.createElement('style');var cssLink=doc.createElement('link');cssLink.setAttribute('rel','stylesheet');cssLink.setAttribute('href','../pixel-glass-js/styles.css');doc.head.appendChild(cssLink)}
-function applyCurrentData(){for(var key in targets){var target=targets[key];var current=currents[key];if(target.attr==='data'){setData(target.elem,key,current)}}
-if(currents.state==='off'){disableInputs()}}
-function applyCurrentStyles(){for(var key in targets){var target=targets[key];var current=currents[key];if(target.attr==='style'){target.elem.style[key]=current}}}
-function removeCurrentStyles(){for(var key in targets){var target=targets[key];if(target.attr==='style'){target.elem.style[key]=''}}}
-function hasData(elem,dataName){if(!elem){return!1}
-dataName='data-'+dataName;if(elem.getAttribute(dataName)!==undefined&&elem.getAttribute(dataName)!==null){return!0}
-return!1}
-function setData(elem,dataName,dataVal){if(!elem){return}
-dataName='data-'+dataName;elem.setAttribute(dataName,dataVal)}
-function setClasses(elem,classes){if(!elem){return}
-if(classes.length>0){classes.forEach(function(className){elem.classList.add(className)})}}}
-window.onload=function(){pixelGlass()}
+  if(!canDisableAll){canBeDisabled.push(input)}
+    controlsPanel.appendChild(input);input.onclick=function(){if(!params.target){return}
+  currentNum=+!currentNum;currentVal=list[currentNum];setData(input,'state-num',currentNum);setData(params.target.elem,itemName,currentVal);saveLocalStorage(itemName,currentVal);if(canDisableAll&&canDisableAll===!0){if(currentVal==='off'){removeCurrentStyles();disableInputs()}
+  else{applyCurrentStyles();enableInputs()}}}}
+  function createInputNumber(params){var itemName=params.itemName;var attrs=params.attrs;var type=params.type;var setAttr=params.setAttr;var canDisableAll=params.canDisableAll;var id=itemName;var input=doc.createElement('input');setClasses(input,[panelClass+'__control',panelClass+'__control--'+type]);input.setAttribute('type',type);input.setAttribute('id',id);for(var attr in attrs){input.setAttribute(attr,attrs[attr])}
+  input.setAttribute('value',currents[itemName]);if(!canDisableAll){canBeDisabled.push(input)}
+  controlsPanel.appendChild(input);input.oninput=function(){if(setAttr==='style'){params.target.elem.style[itemName]=this.value;saveLocalStorage(itemName,this.value)}}}
+  function createDragButton(){var input=doc.createElement('button');setClasses(input,[panelClass+'__control',panelClass+'__control--drag-n-drop']);input.setAttribute('type','button');input.innerHTML=' ';controlsPanel.appendChild(input);input.onmousedown=function(){var offsetTop=this.offsetTop;var offsetLeft=controlsPanel.clientWidth-this.clientWidth;var styles=getComputedStyle(controlsPanel);controlsPanel.style.top=styles.top;controlsPanel.style.left=styles.left;controlsPanel.style.right='auto';controlsPanel.style.bottom='auto';doc.onmousemove=function(ev){var x=(ev.clientX-offsetLeft)+'px';var y=(ev.clientY)+'px';controlsPanel.style.left=x;controlsPanel.style.top=y}};input.onmouseup=function(){var styles=getComputedStyle(controlsPanel);var left=+styles.left.replace(/px/,'');var right=+styles.right.replace(/px/,'');var top=+styles.top.replace(/px/,'');var bottom=+styles.bottom.replace(/px/,'');if(left>right){saveLocalStorage('left','auto');saveLocalStorage('right',styles.right);controlsPanel.style.right=styles.right;controlsPanel.style.left='auto'}
+  else{saveLocalStorage('left',styles.left);saveLocalStorage('right','auto')}
+  if(top>bottom){saveLocalStorage('top','auto');saveLocalStorage('bottom',styles.bottom);controlsPanel.style.bottom=styles.bottom;controlsPanel.style.top='auto'}
+  else{saveLocalStorage('top',styles.top);saveLocalStorage('bottom','auto')}
+  doc.onmousemove=null}}
+  function disableInputs(){canBeDisabled.forEach(function(item){item.setAttribute('disabled','')})}
+  function enableInputs(){canBeDisabled.forEach(function(item){item.removeAttribute('disabled')})}
+  function getCurrent(name,defaultValue){var itemName=[prefix,name].join('-');var localStorageVal=localStorage[itemName];return localStorageVal?localStorageVal:defaultValue}
+  function saveLocalStorage(name,value){var itemName=[prefix,name].join('-');localStorage[itemName]=value}
+  function getBodyOpacity(){var opacityStr=getComputedStyle(doc.body).opacity;return+opacityStr}
+  function addExternalCSS(){var styleElem=doc.createElement('style');var cssLink=doc.createElement('link');cssLink.setAttribute('rel','stylesheet');cssLink.setAttribute('href','../pixel-glass-js/styles.css');doc.head.appendChild(cssLink)}
+  function applyCurrentData(){for(var key in targets){var target=targets[key];var current=currents[key];if(target.attr==='data'){setData(target.elem,key,current)}}
+  if(currents.state==='off'){disableInputs()}}
+    function applyCurrentStyles(){for(var key in targets){var target=targets[key];var current=currents[key];if(target.attr==='style'){target.elem.style[key]=current}}}
+  function removeCurrentStyles(){for(var key in targets){var target=targets[key];if(target.attr==='style'){target.elem.style[key]=''}}}
+  function hasData(elem,dataName){if(!elem){return!1}
+  dataName='data-'+dataName;if(elem.getAttribute(dataName)!==undefined&&elem.getAttribute(dataName)!==null){return!0}
+  return!1}
+  function setData(elem,dataName,dataVal){if(!elem){return}
+  dataName='data-'+dataName;elem.setAttribute(dataName,dataVal)}
+  function setClasses(elem,classes){if(!elem){return}
+  if(classes.length>0){classes.forEach(function(className){elem.classList.add(className)})}}}
+    window.onload=function(){pixelGlass()}
 
 
 //endRemoveIf(production)
