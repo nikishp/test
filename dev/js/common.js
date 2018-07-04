@@ -88,20 +88,20 @@ $(this).validate({
 });
 
   //popup form
-  // $('.popup-js').magnificPopup({
-  //   type: 'inline',
-  //   preloader: false,
-  //   focus: '#name',
-  //   callbacks: {
-  //     beforeOpen: function () {
-  //       if ($(window).width() < 700) {
-  //         this.st.focus = false;
-  //       } else {
-  //         this.st.focus = '#name';
-  //       }
-  //     }
-  //   }
-  // });
+  $('.popup-js').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    focus: '#name',
+    callbacks: {
+      beforeOpen: function () {
+        if ($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#name';
+        }
+      }
+    }
+  });
 
   //phone mask
   // $(".phone").mask("+9(999)999-99-99");

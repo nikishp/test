@@ -11,7 +11,7 @@ module.exports = function() {
         //magnific-popup
         //http://dimsemenov.com/plugins/magnific-popup/
         // 'dev/libs/magnific-popup/dist/jquery.magnific-popup.js',
-        // 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
 
         //fancybox 3
         // https://fancyapps.com/fancybox/3/
@@ -57,7 +57,7 @@ module.exports = function() {
         // 'dev/libs/jquery.validate/jquery.validate.js',
         // 'dev/libs/jquery.validate/messages_ru.js',
         'node_modules/jquery-validation/dist/jquery.validate.js',
-        'node_modules/jquery-validation/dist/localization/messages_ru.js',
+        // 'node_modules/jquery-validation/dist/localization/messages_ru.js',
 
         //phone mask file
         'dev/libs/phone.mask/mask.js',

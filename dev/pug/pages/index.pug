@@ -110,14 +110,33 @@ block content
                 span 45$
 
   +divider()
+  section.communication
+    .container
+      .row.row--like-footer
+        .col-lg-6
+          h2.h2 Follow Us
+          .social
+            a.social__link(href="#")
+              +svg('fc')
+            a.social__link(href="#")
+              +svg('tw')
+            a.social__link(href="#")
+              +svg('rss')
+    
+          nav.bottom-nav
+            a.bottom-nav__link(href="#") home
+            a.bottom-nav__link(href="#") about us
+            a.bottom-nav__link(href="#") menu
+            a.bottom-nav__link(href="#") portfolio
+            a.bottom-nav__link(href="#") news
+            a.bottom-nav__link(href="#") contacts
 
+        .col-lg-6
+          h2.h2 Email Updates
+          p.communication__desc Join our digital mailing list and get news<br> deals and be first to know about events
 
-  
-
-
-
-
-
+          - formTitle = 'Email Updates'
+          +form()
 
 
 
