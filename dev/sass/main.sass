@@ -15,7 +15,7 @@
 //@include retina-sprites($retina-groups) //раскоменить для ретины
 @import "same_style"
 
-@import "pixel-glass"
+// @import "pixel-glass"
 
 /* lead-up style end */
 
@@ -66,6 +66,10 @@
     content: ''
     display: block
     padding-top: 32%
+    +smx-block()
+      padding-top: 50%
+    +xxs-block()
+      padding-top: 60%
   img
     position: absolute
     top: 0
@@ -115,6 +119,8 @@
 
 .info-block
   display: flex
+  +md-block()
+    flex-direction: column
   p
     margin-top: 0
 .info-block__img
@@ -122,15 +128,36 @@
   +size(160)
   margin-right: 30px
   padding: 3px
+  font-size: 0
   box-shadow: 1px 5px 9px 0 rgba(0, 0, 0, 0.1)
   border-radius: 50%
   border: 1px solid #e6e4e4
   background: #fff
+  +md-block()
+    max-width: 250px
+    width: 100%
+    height: auto
+    border-radius: 10px
   img
     width: 100%
     height: 100%
     border-radius: 50%
     +object-fit(cover)
+    +md-block()
+      border-radius: inherit
+  +md-block()
+    margin-bottom: 20px
+
+.info-block__action
+  +sm-block()
+    margin-bottom: 30px
+
+
+
+
+
+
+
 
 .list
 
@@ -264,6 +291,11 @@
 .communication
   padding-bottom: 35px
 
+.row--like-footer
+  +sm-block()
+    flex-direction: column-reverse
+
+
 
 .social
   display: flex
@@ -298,11 +330,17 @@
   font-size: 12px
   text-transform: uppercase
   color: #504f4f
-
+  +xss-block()
+    flex-wrap: wrap
+    justify-content: space-between
 
 .bottom-nav__link
+  +xss-block()
+    margin-bottom: 10px
   &:not(:last-child)
     margin-right: 20px
+    +md-block()
+      margin-right: 6px
   &:hover
     text-decoration: underline
 
@@ -310,10 +348,10 @@
   margin: 0
   font-size: 12px
   +lh(18,12)
-
 .form
   padding-top: 20px
-
+  +sm-block()
+    margin-bottom: 32px
 .form__list
   display: flex
   font-size: 12px

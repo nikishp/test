@@ -10,15 +10,33 @@
 
 .header__list-open
   display: none
-
-
+  +md-block()
+    display: flex
+    justify-content: flex-end
 .header__list 
   display: flex
   justify-content: flex-end
   margin-left: -3px
   margin-right: -3px
   // background: green
+  +md-block()
+    display: none
+    position: absolute
+    top: calc(100% + 2px)
+    // top: 100%
+    left: 0px
+    right: 0px
+    // z-index: 0
+    margin: 0
+    padding: 10px
+    padding-bottom: 5px
+    background:  #f2f0f0
+    box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.21)
+    // outline: $ou
 
+.header__list-item
+  +md-block()
+    margin-bottom: 5px
 .header__list-link
   display: block
   margin: 0 3px

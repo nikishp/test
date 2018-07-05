@@ -1,17 +1,24 @@
 .header
   position: relative
-  z-index: 3
+  z-index: 31
   padding: 23px 0 28px
   border-top: 27px solid #eb6c10
   box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.21)
   // margin-bottom: 30px
-
+  +sm-block()
+    padding: 10px 0
+    border-top-width: 10px
 .row--header
   align-items: center
-
+  +md-block()
+    // position: relative
+  [class*="col-"]
+    +md-block()
+      position: static
 .logo
   font-size: 0
-
+  img 
+    height: 40px
 
 
 

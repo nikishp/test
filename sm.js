@@ -28,6 +28,10 @@ var settings = {
     xs: {
       width: "576px"
     },
+    xss: {
+      width: "420px"
+    },
+
     xxs: {
       width: "380px"
     }
